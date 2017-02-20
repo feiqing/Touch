@@ -87,7 +87,7 @@ public class TouchContextHelper extends AbstractHelper {
                 AccessibleObject accessible = entry.getKey();
                 Class<?> clazz = entry.getValue();
 
-                String touchPattern = BaseUtils.getTouchPattern(accessible);
+                String touchPattern = TouchUtils.getTouchPattern(accessible);
                 Object instance = getBeanInstance(springContext, clazz);
 
                 List<MethodEntity> methodEntities;
@@ -119,7 +119,7 @@ public class TouchContextHelper extends AbstractHelper {
         for (String pattern : patterns) {
             TouchEntity entity = touchContext.getUnchecked(pattern);
             String className = entity.getInstance().getClass().getName();
-            String methodName = BaseUtils.getName(entity.getAccessibleObject());
+            String methodName = TouchUtils.getName(entity.getAccessibleObject());
 
             patternMap.put(pattern, className + " -> " + methodName);
         }

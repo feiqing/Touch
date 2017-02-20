@@ -67,8 +67,8 @@ public class OnTouchServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String touchPattern = BaseUtils.getTouchPattern(req.getRequestURI());
-        String queryString = BaseUtils.getQueryString(req.getQueryString());
+        String touchPattern = TouchUtils.getTouchPattern(req.getRequestURI());
+        String queryString = TouchUtils.getQueryString(req.getQueryString());
 
         if (switcherHelper.isSwitchPassed(touchPattern, queryString)) {
 
@@ -92,9 +92,9 @@ public class OnTouchServlet extends HttpServlet {
                     } else {
                         JSONObject json = new JSONObject(2);
                         Field touchFiled = (Field) accessible;
-                        json.put("old", BaseUtils.getFieldValue(touchFiled, instance));
+                        json.put("old", TouchUtils.getFieldValue(touchFiled, instance));
                         touchFiled.set(instance, ArgComposeUtil.composeField(queryString, entities, converterHelper));
-                        json.put("new", BaseUtils.getFieldValue(touchFiled, instance));
+                        json.put("new", TouchUtils.getFieldValue(touchFiled, instance));
 
                         jsonResult = json.toJSONString();
                     }

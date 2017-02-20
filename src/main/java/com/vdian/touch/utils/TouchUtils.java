@@ -20,11 +20,16 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * @author jifang
  * @since 16/10/24 下午2:32.
  */
-public class BaseUtils {
-
-    private static final DateFormat DEFAULT_DATE_FORMATTER = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+public class TouchUtils {
 
     private static final Set<String> touchPatterns = new CopyOnWriteArraySet<>();
+
+    private static final ThreadLocal<DateFormat> formatter = new ThreadLocal<DateFormat>() {
+        @Override
+        protected DateFormat initialValue() {
+            return new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        }
+    };
 
     public static String getTouchPattern(String requestURI) {
         int index = requestURI.lastIndexOf('/');
@@ -44,7 +49,7 @@ public class BaseUtils {
 
         String pattern;
         if (Strings.isNullOrEmpty(touchPattern)) {
-            pattern = BaseUtils.getName(accessibleObject);
+            pattern = TouchUtils.getName(accessibleObject);
         } else {
             pattern = touchPattern;
         }
@@ -66,12 +71,10 @@ public class BaseUtils {
     }
 
     public static Date dateFormat(String dateString) {
-        synchronized (DEFAULT_DATE_FORMATTER) {
-            try {
-                return DEFAULT_DATE_FORMATTER.parse(dateString);
-            } catch (ParseException e) {
-                throw new TouchException(e);
-            }
+        try {
+            return formatter.get().parse(dateString);
+        } catch (ParseException e) {
+            throw new TouchException(e);
         }
     }
 

@@ -1,6 +1,6 @@
 package com.vdian.touch.converter;
 
-import com.vdian.touch.utils.BaseUtils;
+import com.vdian.touch.utils.TouchUtils;
 
 import java.lang.reflect.Type;
 import java.util.Date;
@@ -18,6 +18,6 @@ public class DateConverter implements Converter<Date> {
 
     @Override
     public Date convert(Class<?> argType, Type[] actualTypes, String argString) throws Exception {
-        return BaseUtils.dateFormat(argString);
+        return TouchUtils.dateFormat(argString);
     }
 }

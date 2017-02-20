@@ -15,7 +15,7 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <vitamin.version>2.0.1</vitamin.version>
+        <!--<vitamin.version>2.0.1</vitamin.version>-->
         <fastjson.version>1.2.12</fastjson.version>
         <guava.version>19.0</guava.version>
         <commons.version>3.4</commons.version>
@@ -60,14 +60,13 @@
             <version>${slf4j.version}</version>
         </dependency>
 
-        <!-- vdian -->
-        <!--
-        <dependency>
-            <groupId>com.vdian.vitamin</groupId>
-            <artifactId>vitamin-client</artifactId>
-            <version>${vitamin.version}</version>
-            <optional>true</optional>
-        </dependency>
+        <!-- Vdian
+            <dependency>
+                <groupId>com.vdian.vitamin</groupId>
+                <artifactId>vitamin-client</artifactId>
+                <version>${vitamin.version}</version>
+                <optional>true</optional>
+            </dependency>
         -->
         <!-- zk -->
         <dependency>
@@ -125,14 +124,16 @@
         </plugins>
     </build>
 
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <url>http://mvn.vdian.net:8080/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <url>http://mvn.vdian.net:8080/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <!--
+        <distributionManagement>
+            <repository>
+                <id>releases</id>
+                <url>http://mvn.vdian.net:8080/nexus/content/repositories/releases/</url>
+            </repository>
+            <snapshotRepository>
+                <id>snapshots</id>
+                <url>http://mvn.vdian.net:8080/nexus/content/repositories/snapshots/</url>
+            </snapshotRepository>
+        </distributionManagement>
+    -->
 </project>
