@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<touch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.vdian.net/touch"
+       xsi:schemaLocation="http://www.vdian.net/touch
+       http://www.vdian.net/touch.xsd">
+
+    <packages>
+        <!-- package最少有一个(可以多个), 否则touch.xsd验证不通过, 且启动时会抛异常 -->
+        <package>com.vdian.demo</package>
+    </packages>
+
+    <converters>
+        <!-- 默认已经注册了下面三个Converter, 如果没有自定义的Converter可以去掉这整个 converters 的配置 -->
+        <converter>com.vdian.touch.converter.CalendarConverter</converter>
+        <converter>com.vdian.touch.converter.DateConverter</converter>
+        <converter>com.vdian.touch.converter.SetConverter</converter>
+    </converters>
+
+    <switchers>
+        <!-- 默认已经注册了Vitamin的Switcher, 如果没有自定义的Switcher(像下面的ZookeeperSwitcher), 则可以去掉这整个 switchers 的配置  -->
+        <switcher class="com.vdian.touch.switcher.VitaminSwitcher"/>
+
+        <!-- 如果需要使用ZookeeperSwitcher, 需要在项目pom中添加curator-recipes的依赖, 该依赖默认在Touch中是optional的 -->
+        <switcher class="com.vdian.touch.switcher.ZookeeperSwitcher">
+            <config key="zookeeper" value="10.1.101.60:2181"/>
+            <config key="touchPath" value="/touch/touch-switcher"/>
+            <config key="touchKey" value="touch_open"/>
+        </switcher>
+    </switchers>
+
+</touch>

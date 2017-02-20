@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         metadata-complete="false">
+
+    <display-name>touch-test-case</display-name>
+
+    <!-- Servlet 2.0 配置
+    <servlet>
+        <servlet-name>OnTouchServlet</servlet-name>
+        <servlet-class>com.vdian.touch.server.OnTouchServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OnTouchServlet</servlet-name>
+        <url-pattern>/touch/*</url-pattern>
+    </servlet-mapping>
+    -->
+</web-app>

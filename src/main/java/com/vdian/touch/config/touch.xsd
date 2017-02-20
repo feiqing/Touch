@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.vdian.net/touch"
+        elementFormDefault="qualified">
+    <element name="touch">
+        <complexType>
+            <all>
+                <element name="packages" minOccurs="1">
+                    <complexType>
+                        <sequence>
+                            <element name="package" type="string" minOccurs="1" maxOccurs="unbounded"/>
+                        </sequence>
+                    </complexType>
+                </element>
+
+                <element name="converters" minOccurs="0">
+                    <complexType>
+                        <sequence>
+                            <element name="converter" type="string" maxOccurs="unbounded"/>
+                        </sequence>
+                    </complexType>
+                </element>
+
+                <element name="switchers" minOccurs="0">
+                    <complexType>
+                        <sequence>
+                            <element name="switcher" maxOccurs="unbounded">
+                                <complexType>
+                                    <sequence>
+                                        <element name="config" minOccurs="0" maxOccurs="unbounded">
+                                            <complexType>
+                                                <attribute name="key" type="string" use="required"/>
+                                                <attribute name="value" type="string" use="required"/>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                    <attribute name="class" type="string" use="required"/>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </all>
+        </complexType>
+    </element>
+</schema>
