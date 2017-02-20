@@ -77,11 +77,11 @@
 
 ### 1. pom
 ```
-    <dependency>
-        <groupId>com.vdian.touch</groupId>
-        <artifactId>touch</artifactId>
-        <version>0.5.1-SNAPSHOT</version>
-    </dependency>
+<dependency>
+    <groupId>com.vdian.touch</groupId>
+    <artifactId>touch</artifactId>
+    <version>0.5.1-SNAPSHOT</version>
+</dependency>
 ```
 
 ### 2. touch.xml(maven项目需要放在resource目录下)
