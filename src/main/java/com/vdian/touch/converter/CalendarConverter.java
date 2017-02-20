@@ -19,10 +19,14 @@ public class CalendarConverter implements Converter<Calendar> {
 
     @Override
     public Calendar convert(Class<?> argType, Type[] actualTypes, String argString) throws Exception {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar;
         if (!Strings.isNullOrEmpty(argString)) {
+            calendar = Calendar.getInstance();
             calendar.setTime(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(argString));
+        } else {
+            calendar = null;
         }
+
         return calendar;
     }
 }
