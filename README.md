@@ -68,6 +68,7 @@
 - 0.5.1
     - 获取SpringBean时添加BeanInstance缓存, 加速获取Bean速度;
     - fix 单包内找不到`@Touch`注解而抛异常的错误, 改为所有的包如果都找不到才抛出`TouchException`通知.
+    - fix calendar = null 时取当前时间的bug
 
 > 接下来到2017年中旬不会再有大版本的更新, 而致力于使Touch更加稳定, 提供更高性能, 适用更多项目类型.
 
