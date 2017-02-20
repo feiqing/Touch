@@ -3,7 +3,7 @@
 标签 ： 开源
 
 ---
-> 线上后门与接口调试:
+> 线上后门与接口调试: 
 原先需要测试一个接口(如Dubbo、DAO), 或为线上留后门, 需要写大量的Web层(Api、Servlet或Controller)代码并在浏览器触发, 进而调用到实际想要执行的方法或想查看的属性, 而有了Touch后, 你可以专注于业务功能的实现, 而不需要再书写这些跟业务无关的触发代码.
 
 
@@ -17,7 +17,7 @@
     - `@Touch`的`touchPattern`属性提供Touch别名
     - 第一版`com.vdian.touch.converter.Converter`
     - `@TouchArg`注解获取参数泛型类型
-    参考: [0.0.8版本文档](http://gitlab.vdian.net/zhujifang/touch/wikis/0.0.8%E7%89%88%E6%9C%AC%E6%96%87%E6%A1%A3)
+    参考: [0.0.8版本文档](https://github.com/feiqing/Touch/wiki/Touch-0.0.8-%E7%89%88%E6%9C%AC%E6%96%87%E6%A1%A3)
 
 ---
 ### 0.1版本
@@ -185,7 +185,7 @@ http://localhost:8080/touch/
 ---
 ### 2. Converter与参数映射
 - 参数映射
-我们默认使用***json***与方法参数一一映射, 外层json的key为方法参数名.
+我们默认使用***json***与方法参数一一映射, 外层json的key为方法参数名. 
 
 - 自定义Converter
 `Converter`大部分情况下是不用配的, Touch默认为我们绑定了很多类型:
@@ -248,7 +248,7 @@ public class TouchTestCaseImpl implements TouchTestCase {
 
     @Touch
     private List<User> users;
-
+    
     // ...
 }
 ```
@@ -288,3 +288,9 @@ Touch当前版本获取方法参数名是从JVM的MethodArea用javassist获取, 
     - [Java动态编程初探——Javassist](http://www.cnblogs.com/hucn/p/3636912.html)
 - 动态获取泛型参数可以参考
     - [Java 反射 (by 翡青)](http://blog.csdn.net/zjf280441589/article/details/50453776)
+
+---
+- *by* 业务技术@吉芳
+    - 联系: zhujifang@weidian.com
+    - 博客: [翡青的技术周刊](http://blog.csdn.net/zjf280441589) - http://blog.csdn.net/zjf280441589
+    - 微博: [翡青jf](http://weibo.com/u/3319050953) - http://weibo.com/u/3319050953
