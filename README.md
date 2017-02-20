@@ -106,7 +106,7 @@
     <switchers>
         <!-- Vdian内部版本默认已经注册了Vitamin的Switcher(开源版本没有), 如果没有自定义的Switcher(像下面的ZookeeperSwitcher), 则可以去掉这整个 switchers 的配置  
         <switcher class="com.vdian.touch.switcher.VitaminSwitcher"/>
--->
+        -->
         <!-- 如果需要使用ZookeeperSwitcher, 需要在项目pom中添加curator-recipes的依赖, 该依赖默认在Touch中是optional的 -->
         <switcher class="com.vdian.touch.switcher.ZookeeperSwitcher">
             <config key="zookeeper" value="10.1.101.60:2181"/>
