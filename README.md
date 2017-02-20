@@ -30,7 +30,7 @@
 ---
 ### 0.2版本
 - 增加包扫描功能, 精简web.xml内关于Touch的配置
-- 增加ZookeeperSwitcher实现, 提供基于ZK集群的Touch安全控制
+- 增加`ZookeeperSwitcher`实现, 提供基于ZK集群的Touch安全控制
 - 增加`lists.do` 接口提供获取touch context内容
 - fix fastjson循环引用 bug
 
@@ -40,7 +40,7 @@
 删除`@TouchArg`注解, 动态获取泛型参数类型
 - 0.3.1 版本: 提高响应速度的同时降低内存占用
     - init时缓存方法参数名、参数类型、参数泛型类型, 加速参数映射速度
-    - 使用WeakHashMap替换HashMap存储TouchContext, 占用的内存随GC而释放, 再次调用时重新init.
+    - 使用`WeakHashMap`替换HashMap存储`TouchContext`, 占用的内存随GC而释放, 再次调用时重新init.
 - 3.2 版本
     更新`Converter<T>`接口, 添加`Type[] actualTypes`参数代表泛型真实类型, 非泛型参数为`null`;
 
