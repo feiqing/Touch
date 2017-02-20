@@ -21,7 +21,7 @@
 
 ---
 ### 0.1版本
-- 增加Switcher接口, 并提供VitaminSwitcher默认实现, 增加线上环境安全校验
+- 增加Switcher接口, ~~并提供VitaminSwitcher默认实现(Vdian内部版本),~~ 增加线上环境安全校验
 - Converter 添加@TouchArg参数
 - 增加Converter与Switcher的默认绑定
 - fix 空QueryString bug
@@ -69,7 +69,7 @@
     - 获取SpringBean时添加BeanInstance缓存, 加速获取Bean速度;
     - fix 单包内找不到`@Touch`注解而抛异常的错误, 改为所有的包如果都找不到才抛出`TouchException`通知.
 
-> 接下来到2017年不会再有大版本的更新, 而致力于使Touch更加稳定, 提供更高性能, 适用更多项目类型.
+> 接下来到2017年中旬不会再有大版本的更新, 而致力于使Touch更加稳定, 提供更高性能, 适用更多项目类型.
 
 ---
 ## 入门
@@ -104,9 +104,9 @@
     </converters>
 
     <switchers>
-        <!-- 默认已经注册了Vitamin的Switcher, 如果没有自定义的Switcher(像下面的ZookeeperSwitcher), 则可以去掉这整个 switchers 的配置  -->
+        <!-- Vdian内部版本默认已经注册了Vitamin的Switcher(开源版本没有), 如果没有自定义的Switcher(像下面的ZookeeperSwitcher), 则可以去掉这整个 switchers 的配置  
         <switcher class="com.vdian.touch.switcher.VitaminSwitcher"/>
-
+-->
         <!-- 如果需要使用ZookeeperSwitcher, 需要在项目pom中添加curator-recipes的依赖, 该依赖默认在Touch中是optional的 -->
         <switcher class="com.vdian.touch.switcher.ZookeeperSwitcher">
             <config key="zookeeper" value="10.1.101.60:2181"/>
@@ -216,7 +216,7 @@ public interface TouchSwitcher {
 }
 
 ```
-如果没有配置任何Switcher的话, Touch会默认配置一个基于Vitamin的Touch开关规则: 日常、测试环境默认打开, 预发、线上环境默认关闭. 如果想实现自己的安全过滤规则, 可参考`VitaminSwitcher`或`ZookeeperSwitcher`(基于Zookeeper).
+如果没有配置任何Switcher的话, ~~Touch会默认配置一个基于Vitamin的Touch开关规则: 日常、测试环境默认打开, 预发、线上环境默认关闭.~~ 如果想实现自己的安全过滤规则, 可参考~~`VitaminSwitcher`或~~`ZookeeperSwitcher`(基于Zookeeper).
 
 ---
 
@@ -290,7 +290,7 @@ Touch当前版本获取方法参数名是从JVM的MethodArea用javassist获取, 
     - [Java 反射 (by 翡青)](http://blog.csdn.net/zjf280441589/article/details/50453776)
 
 ---
-- *by* 业务技术@吉芳
-    - 联系: zhujifang@weidian.com
-    - 博客: [翡青的技术周刊](http://blog.csdn.net/zjf280441589) - http://blog.csdn.net/zjf280441589
-    - 微博: [翡青jf](http://weibo.com/u/3319050953) - http://weibo.com/u/3319050953
+- *by* **攻城师@翡青**
+    - Email: feiqing.zjf@gmail.com
+    - 博客: [攻城师-翡青](http://blog.csdn.net/zjf280441589) - http://blog.csdn.net/zjf280441589
+    - 微博: [攻城师-翡青](http://weibo.com/u/3319050953) - http://weibo.com/u/3319050953

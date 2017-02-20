@@ -4,7 +4,6 @@ import com.vdian.touch.exceptions.TouchException;
 import com.vdian.touch.switcher.TouchSwitcher;
 
 import javax.servlet.ServletContext;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -58,8 +57,10 @@ public class SwitcherHelper extends AbstractHelper {
     }
 
     private void addDefault(Set<TouchSwitcher> switchers) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
-        TouchSwitcher vitaminSwitcher = (TouchSwitcher) Class.forName("com.vdian.touch.switcher.VitaminSwitcher").newInstance();
-        vitaminSwitcher.init(Collections.<String, String>emptyMap());
-        switchers.add(vitaminSwitcher);
+        /*
+         TouchSwitcher vitaminSwitcher = (TouchSwitcher) Class.forName("com.vdian.touch.switcher.VitaminSwitcher").newInstance();
+         vitaminSwitcher.init(Collections.<String, String>emptyMap());
+         switchers.add(vitaminSwitcher);
+         */
     }
 }

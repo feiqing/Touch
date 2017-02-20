@@ -61,12 +61,14 @@
         </dependency>
 
         <!-- vdian -->
+        <!--
         <dependency>
             <groupId>com.vdian.vitamin</groupId>
             <artifactId>vitamin-client</artifactId>
             <version>${vitamin.version}</version>
             <optional>true</optional>
         </dependency>
+        -->
         <!-- zk -->
         <dependency>
             <groupId>org.apache.curator</groupId>

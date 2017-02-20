@@ -1,5 +1,5 @@
 package com.vdian.touch.switcher;
-
+/*
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.vdian.vitamin.client.VitaminClient;
@@ -8,11 +8,12 @@ import com.vdian.vitamin.common.model.NodeDO;
 
 import java.util.List;
 import java.util.Map;
-
+*/
 /**
  * @author jifang
  * @since 16/10/24 下午4:57.
  */
+/*
 public class VitaminSwitcher implements TouchSwitcher {
 
     private static final String TOUCH_VITAMIN_GROUP_ID = "touch";
@@ -49,3 +50,4 @@ public class VitaminSwitcher implements TouchSwitcher {
         return on;
     }
 }
+*/
